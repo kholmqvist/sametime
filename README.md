@@ -13,11 +13,18 @@ restart	# Restarts sametime 12
 ```
 
 ### Notes
-Manage Docker as non-root user  
+#### Manage Docker as non-root user  
 ```
 sudo groupadd docker  
 sudo usermod -aG docker $USER
 newgrp docker  
 ```
+
+#### Run script on boot
+Add this to your crontrab  
+```
+@reboot /PATH_TO/sametime.sh start
+```
+
 
 The script runs **sudo ./CleanUpMultiJibri.sh** during stop/restart, that's why it's asking for password
