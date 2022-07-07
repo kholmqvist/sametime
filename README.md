@@ -12,19 +12,20 @@ stop	# Stops sametime 12 container
 restart	# Restarts sametime 12  
 ```
 
-### Notes
-#### Manage Docker as non-root user  
+## Notes
+### Manage Docker as non-root user  
 ```
 sudo groupadd docker  
 sudo usermod -aG docker $USER
 newgrp docker  
 ```
 
-#### Run script on boot
+### Run script on boot
 Add this to your crontrab  
 ```
 @reboot /PATH_TO/sametime.sh start
 ```
 
-
-The script runs **sudo ./CleanUpMultiJibri.sh** during stop/restart, that's why it's asking for password
+### Q/A
+Q: Why is it asking for password during shutdown?  
+A: The script runs **sudo ./CleanUpMultiJibri.sh** when using stop/restart. This is because multiple recorders are being used. see [here](https://help.hcltechsw.com/sametime/12/admin/configure_virtual_devices.html)
