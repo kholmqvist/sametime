@@ -31,9 +31,9 @@ Add this to your crontrab
 Q: Why is it asking for password during shutdown?  
 A: The script runs **sudo ./CleanUpMultiJibri.sh** when using stop/restart. This is because multiple recorders are being used. see [here](https://help.hcltechsw.com/sametime/12/admin/configure_virtual_devices.html) 
 
-Q: docker-compose not found
+Q: docker-compose not found  
 A: 
-:```
+```
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose 
 ```
